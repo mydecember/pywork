@@ -1,7 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
 import math
-
+# refer
+# https://blog.csdn.net/u010592995/article/details/73555425/
 def showSinc():
     N = 15
     f = 1.0
@@ -95,7 +96,8 @@ def show1():
 
     for t in range(0, len(ta)):
         for m in range(0, len(nTs)):
-            fa[t] = fa[t] + x[m] * np.sinc((t * Dt - delay - m * Ts) / Ts)
+            # fa[t] = fa[t] + x[m] * np.sinc((t * Dt - delay - m * Ts) / Ts)
+            fa[t] = fa[t] + x[m] * np.sinc((t - delay - m / 2))
 
     plt.subplot(312);
     plt.stem(ta, fa)
